@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <title>GAUSIAN Store</title>
+</head>
+<body data-ng-controller="StoreListCtrl" data-ng-init="init()" style="overflow: hidden;">
+<div class="whole_container">
+
+  <div id="category_container">
+    <div class="logo">GAUSIAN Store</div>
+    <div class="search_bar">
+      <input class="search_bar_input" placeholder="Search..." ng-model="query" ng-keydown="Search($event)"></input>
+      <div class="search_bar_bn" ng-click="ClickSearch()"></div>
+    </div>
+    <div class="main_navigator_h1" ng-click="filterCAT('Recommended')">Recommended</div>
+    <div class="main_navigator_h1" ng-click="filterCAT('Business Tools')">Business Tools</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Administrative')">Administrative</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Advertising')">Advertising</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Analytics')">Analytics</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Collaborative')">Collaborative</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Customer Relationship')">Customer Relationship</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('e-Commerce')">e-Commerce</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Financial')">Financial</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Human Resource')">Human Resource</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Inventory')">Inventory</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Manufacturing')">Manufacturing</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Marketing')">Marketing</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Projects')">Projects</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Public Relationship')">Public Relationship</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Research')">Research</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Risk')">Risk</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Supplier')">Supplier</div>
+      <div class="main_navigator_h2" ng-click="filterCAT('Tax')">Tax</div>
+    <div class="main_navigator_h1" ng-click="filterCAT('Productivity')">Productivity</div>
+    <div class="main_navigator_h1" ng-click="filterCAT('Training')">Training</div>
+    <div class="main_navigator_h1" ng-click="filterCAT('Utilities')">Utilities</div>
+    <div class="main_navigator_h1" ng-click="filterCAT('Developers')">Developers</div>
+  </div>
+  
+  <div id="list_container" hidden>
+    <div class="page_header">{{header}} ({{filterredApps.length}})</div>
+    <div ng-repeat="app in filterredApps | orderBy:'-certified'">
+      <div class="app_unit" ng-click="openApp(app)">
+        <img class="app_ad" src="{{app.ad}}"/>
+        <div class="app_gradient"></div>
+        <div class="app_mask"></div>
+        <div class="app_name">{{app.name}}</div>
+        <div class="app_brief">{{app.brief}}</div>
+        <div class="app_price">{{app.pricing}}</div>
+        <img class="app_icon" src="{{app.icon}}"/>
+        <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
+      </div>
+    </div>
+  </div>
+
+  <div id="search_container" hidden>
+    <div class="page_header">{{search_header}}</div>
+    <div ng-repeat="app in searchedApps | orderBy:'-certified'">
+      <div class="app_unit" ng-click="openApp(app)">
+        <img class="app_ad" src="{{app.ad}}"/>
+        <div class="app_gradient"></div>
+        <div class="app_mask"></div>
+        <div class="app_name">{{app.name}}</div>
+        <div class="app_brief">{{app.brief}}</div>
+        <div class="app_price">{{app.pricing}}</div>
+        <img class="app_icon" src="{{app.icon}}"/>
+        <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay_container" hidden>
+    <div class="overlay_close_x" ng-click="closeApp()"></div>
+    <div class="overlay_app_header">
+      <div class="overlay_app_header_name">{{app.name}} 
+        <span style="font-size: 14px;">(Direct Experience in Store)</span>
+      </div>
+    </div>
+    <div class="overlay_iframe_container">
+      <iframe
+        id="iframe_id"
+        class="full" 
+        frameBorder="0"
+        ng-src="{{app_path}}">
+      </iframe>
+      <div id="iframe_cover_before_loaded">
+        <div class="iframe_loading">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="movein_container" hidden>
+    <div class="overlay_close_x_2" ng-click="closeApp()"></div>
+    <div class="overlay_app_logo" >
+      <img class="overlay_app_img" src="{{app.icon}}"/>
+    </div>
+    <div class="overlay_name">{{app.name}}</div>
+    <div class="overlay_brief">{{app.brief}}</div>
+    <div class="overlay_side_price">FREE
+      <div class="overlay_side_get">GET</div>
+    </div>
+    <div class="overlay_review">
+      <div class="overlay_user_number">1,034 Users</div>
+      <span class="star-icon full">☆</span>
+      <span class="star-icon full">☆</span>
+      <span class="star-icon full">☆</span>
+      <span class="star-icon half">☆</span>
+      <span class="star-icon">☆</span>
+    </div>
+    <!-- <div class="overlay_related">Related APPs</div> -->
+  </div>
+
+
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/display.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+</div>
+</body>
+</html>
