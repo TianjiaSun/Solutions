@@ -35,6 +35,16 @@ var store = angular.module('store',['ngRoute'])
     $("#list_container").fadeIn(1000);
   };
 
+  // open publish solution dialog
+  $scope.Share_info = function() {
+    $("#Share_container").fadeIn(300);
+  }
+
+  // close share info dialog
+  $scope.Close_share = function() {
+    $("#Share_container").hide();
+  }
+
   // open detail page for one app
   $scope.openApp = function(app) {
     // firstly move overlay container into window
