@@ -1092,8 +1092,10 @@ position: relative;
 }
 @-moz-document url-prefix() { /* Firefox Hack :( */
   .star-icon {
+    color: rgb(0, 0, 0);
     font-size: 21px;
-    line-height: 36px;
+    line-height: 21px;
+    position: relative;
   }
 }
 
