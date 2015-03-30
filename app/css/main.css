@@ -1071,7 +1071,7 @@ color: rgb(255, 255, 255);
 }
 .star-icon {
 color: rgb(0, 0, 0);
-font-size: 21px;
+font-size: 19px;
 position: relative;
 }
 .star-icon.full:before {
@@ -1093,8 +1093,8 @@ position: relative;
 @-moz-document url-prefix() { /* Firefox Hack :( */
   .star-icon {
     color: rgb(0, 0, 0);
-    font-size: 21px;
-    line-height: 14px;
+    font-size: 19px;
+    line-height: 19px;
     position: relative;
   }
 }
