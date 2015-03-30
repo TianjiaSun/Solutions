@@ -1094,7 +1094,7 @@ position: relative;
   .star-icon {
     color: rgb(0, 0, 0);
     font-size: 21px;
-    line-height: 21px;
+    line-height: 14px;
     position: relative;
   }
 }
