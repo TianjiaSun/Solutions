@@ -429,7 +429,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   top: 40px;
   left: 10px;
   width: 160px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-family: arial;
   color: black;
 }
@@ -1072,7 +1072,7 @@ color: rgb(255, 255, 255);
 }
 .star-icon {
 color: rgb(0, 0, 0);
-font-size: 16px;
+font-size: 21px;
 position: relative;
 }
 .star-icon.full:before {
@@ -1093,7 +1093,7 @@ position: relative;
 }
 @-moz-document url-prefix() { /* Firefox Hack :( */
   .star-icon {
-    font-size: 26px;
+    font-size: 21px;
     line-height: 36px;
   }
 }
