@@ -14,61 +14,61 @@ var store = angular.module('store',['ngRoute'])
     },
     data: $.param({user_app_id:'app_id', service_app_name:'UserAppInfo', request_string: "get"})
   };
+  
   $http(req_app).success(function(data) {
     $scope.apps = angular.fromJson(data.response);
     console.log($scope.apps);
-  });
+    
+    // get solutions info from ASA
+    // only do this after get apps info from ASA
+    var req_sol = {
+      method: 'POST',
+      url: 'http://asa.gausian.com',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: $.param({user_app_id:'app_id', service_app_name:'Solution', request_string: "get"})
+    };
+    $http(req_sol).success(function(data) {
+      $scope.solutions = angular.fromJson(data.response);
+      console.log("original solutions from ASA");
+      console.log($scope.solutions);
+      // console.log($scope.solutions);
 
-
-  // get solutions info from ASA
-  $scope.data;
-  var req_sol = {
-    method: 'POST',
-    url: 'http://asa.gausian.com',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    data: $.param({user_app_id:'app_id', service_app_name:'Solution', request_string: "get"})
-  };
-  $http(req_sol).success(function(data) {
-    $scope.solutions = angular.fromJson(data.response);
-    // console.log($scope.solutions);
-
-    // append solution with their apps
-    // loop every solution
-    for(var i=0; i<$scope.solutions.length; i++){
-      $scope.solutions[i].app_array = [];
-      var solution = $scope.solutions[i];
-      var solution_apps_string_array = solution.apps.split(',');
-      // loop every app in the solution
-      for(var k=0; k<solution_apps_string_array.length; k++){
-        // find the app from ASA returned info
-        for(var h=0; h<$scope.apps.length; h++){
-          if($scope.apps[h].id === solution_apps_string_array[k]){
-            //console.log("matched");
-            //console.log($scope.apps[h].id);
-            $scope.solutions[i].app_array.push($scope.apps[h]);
+      // append solution with their apps
+      // loop every solution
+      for(var i=0; i<$scope.solutions.length; i++){
+        $scope.solutions[i].app_array = [];
+        var solution = $scope.solutions[i];
+        var solution_apps_string_array = solution.apps.split(',');
+        // loop every app in the solution
+        for(var k=0; k<solution_apps_string_array.length; k++){
+          // find the app from ASA returned info
+          for(var h=0; h<$scope.apps.length; h++){
+            if($scope.apps[h].id === solution_apps_string_array[k]){
+              //console.log("matched");
+              //console.log($scope.apps[h].id);
+              $scope.solutions[i].app_array.push($scope.apps[h]);
+            }
           }
         }
       }
-    }
-    console.log("solutions");
-    console.log($scope.solutions);
+      console.log("solutions is connected with apps");
+      console.log($scope.solutions);
 
-    // open Top Solution page
-    $scope.filterredSolutions = [];
-    var j=0;
-    for(var i=0; i<$scope.solutions.length; i++){
-      var solution = $scope.solutions[i];
-      // scope.header = Top Solutions at this moment
-      if(solution.catalog.match($scope.header)){
-        $scope.filterredSolutions[j++] = solution;
+      // open Top Solution page
+      // only do this after get solutions info from ASA
+      $scope.filterredSolutions = [];
+      var j=0;
+      for(var i=0; i<$scope.solutions.length; i++){
+        var solution = $scope.solutions[i];
+        // scope.header === Top Solutions at this moment
+        if(solution.catalog.match($scope.header)){
+          $scope.filterredSolutions[j++] = solution;
+        }
       }
-    }
-    //console.log("filterredSolutions");
-    //console.log($scope.filterredSolutions);
+    });
   });
-
 
   // to avoid flashing during page loading
   $scope.init = function () {

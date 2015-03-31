@@ -351,7 +351,7 @@ padding-bottom: 4px;
 }
 
 .solution_right_container {
-  position: absolute;
+  position: relative;
   float: right;
   right: 0px;
   width: 160px;
@@ -368,8 +368,8 @@ padding-bottom: 4px;
   min-height: 200px;
   height: auto;
   margin: 8px;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin-bottom: 2vh;
+  margin-top: 2.5vh;
   box-shadow: 0px 0px 12px 1px rgb(50, 50, 50);
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
@@ -627,10 +627,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 
 .app_in_solution_container {
   position: relative;
-  float: left;
+  float: right;
+  right: 170px;
   top: 0px;
-  left: 0px;
   width: calc(100% - 496px);
+  max-width: 1200px;
   height: 100%;
   padding: 5px;
   background: transparent;
@@ -641,7 +642,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
   float: left;
   width: calc(33.3vw - 276px);
   min-width: 190px;
+  max-width: 266px;
   min-height: 135px;
+  max-height: 173px;
   height: calc(16.65vw - 92px);
   margin: 0.5vw;
   background: rgb(219, 219, 219);
@@ -734,8 +737,8 @@ color: rgb(115, 115, 115);
   position: absolute;
   top: 5px;
   left: 5px;
-  width: 46px;
-  height: 46px;
+  width: 3vw;
+  height: 3vw;
   border-radius: 5px;
   box-shadow: 0 0 8px 1px black;
   opacity: 1;

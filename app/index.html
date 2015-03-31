@@ -98,6 +98,16 @@
         <div class="feature_container">
           <div class="feature">{{solution.introduction}}</div>
         </div>
+        <div class="solution_right_container">
+          <div class="try_bn">Try it for FREE</div>
+          <div class="free_trial">30-Days Free Trial</div>
+          <img class="box" src="img/box.png"/>
+          <div class="price_header">Total</div>
+          <div class="Total_price">{{solution.pricing | currency}}</div>
+          <div class="Per_month">/month</div>
+          <div class="discounted_price">{{solution.discount | currency}} Discount Applied</div>
+          <!-- <div class="solution_provider">Provided by GAUSIAN</div> -->
+        </div>
         <div class="app_in_solution_container">
           <div ng-repeat="app in solution.app_array">
             <div class="app_unit">
@@ -111,16 +121,6 @@
               <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
             </div>
           </div>
-        </div>
-        <div class="solution_right_container">
-          <div class="try_bn">Try it for FREE</div>
-          <div class="free_trial">30-Days Free Trial</div>
-          <img class="box" src="img/box.png"/>
-          <div class="price_header">Total</div>
-          <div class="Total_price">{{solution.pricing | currency}}</div>
-          <div class="Per_month">/month</div>
-          <div class="discounted_price">{{solution.discount | currency}} Discount Applied</div>
-          <!-- <div class="solution_provider">Provided by GAUSIAN</div> -->
         </div>
       </div>
     </div>
