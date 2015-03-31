@@ -98,7 +98,7 @@ cursor: pointer;
 }
 
 .main_navigator_h1 {
-  font-size: 2.1vh;
+  font-size: 2vh;
   font-family: Arial;
   height: 3.9vh;
   width: 180px;
@@ -117,7 +117,7 @@ color: rgb(105, 204, 255);
 }
 
 .main_navigator_h2 {
-  font-size: 2vh;
+  font-size: 1.9vh;
   font-family: Arial;
   height: 3.2vh;
   width: 179px;
@@ -639,7 +639,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .app_unit {
   position: relative;
   float: left;
-  width: calc(33.3vw - 274px);
+  width: calc(33.3vw - 276px);
   min-width: 190px;
   min-height: 135px;
   height: calc(16.65vw - 92px);

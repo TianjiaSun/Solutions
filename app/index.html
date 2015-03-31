@@ -76,8 +76,8 @@
   </div>
   
   <div id="list_container" hidden>
-    <div class="page_header">{{header}} ({{solutions.length}})</div>
-    <div ng-repeat="solution in solutions">
+    <div class="page_header">{{header}} ({{filterredSolutions.length}})</div>
+    <div ng-repeat="solution in filterredSolutions">
       <div class="solution_unit">
         <img class="solution_ad" src="{{solution.ad}}"/>
         <div class="solution_mask"></div>
@@ -99,55 +99,17 @@
           <div class="feature">{{solution.introduction}}</div>
         </div>
         <div class="app_in_solution_container">
-          <div class="app_unit">
-            <img class="app_ad" src="{{app.ad}}"/>
-            <div class="app_gradient"></div>
-            <div class="app_mask"></div>
-            <div class="app_name">{{app.name}}</div>
-            <div class="app_brief">{{app.brief}}</div>
-            <div class="app_price">{{app.pricing}}</div>
-            <img class="app_icon" src="{{app.icon}}"/>
-            <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
-          </div>
-          <div class="app_unit">
-            <img class="app_ad" src="{{app.ad}}"/>
-            <div class="app_gradient"></div>
-            <div class="app_mask"></div>
-            <div class="app_name">{{app.name}}</div>
-            <div class="app_brief">{{app.brief}}</div>
-            <div class="app_price">{{app.pricing}}</div>
-            <img class="app_icon" src="{{app.icon}}"/>
-            <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
-          </div>
-          <div class="app_unit">
-            <img class="app_ad" src="{{app.ad}}"/>
-            <div class="app_gradient"></div>
-            <div class="app_mask"></div>
-            <div class="app_name">{{app.name}}</div>
-            <div class="app_brief">{{app.brief}}</div>
-            <div class="app_price">{{app.pricing}}</div>
-            <img class="app_icon" src="{{app.icon}}"/>
-            <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
-          </div>
-          <div class="app_unit">
-            <img class="app_ad" src="{{app.ad}}"/>
-            <div class="app_gradient"></div>
-            <div class="app_mask"></div>
-            <div class="app_name">{{app.name}}</div>
-            <div class="app_brief">{{app.brief}}</div>
-            <div class="app_price">{{app.pricing}}</div>
-            <img class="app_icon" src="{{app.icon}}"/>
-            <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
-          </div>
-          <div class="app_unit">
-            <img class="app_ad" src="{{app.ad}}"/>
-            <div class="app_gradient"></div>
-            <div class="app_mask"></div>
-            <div class="app_name">{{app.name}}</div>
-            <div class="app_brief">{{app.brief}}</div>
-            <div class="app_price">{{app.pricing}}</div>
-            <img class="app_icon" src="{{app.icon}}"/>
-            <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
+          <div ng-repeat="app in solution.app_array">
+            <div class="app_unit">
+              <img class="app_ad" src="{{app.ad}}"/>
+              <div class="app_gradient"></div>
+              <div class="app_mask"></div>
+              <div class="app_name">{{app.name}}</div>
+              <div class="app_brief">{{app.brief}}</div>
+              <div class="app_price">{{app.pricing}}</div>
+              <img class="app_icon" src="{{app.icon}}"/>
+              <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
+            </div>
           </div>
         </div>
         <div class="solution_right_container">
