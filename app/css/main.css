@@ -183,8 +183,9 @@ color: rgb(105, 204, 255);
   width: 640px;
   height: 354px;
   z-index: 11;
+  overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 0 10px 3px black;
+  box-shadow: 0 0 10px 1px black;
 background: rgb(226,226,226); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */
@@ -212,39 +213,59 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
   color: black;
   text-align: left;
 }
-
-.Share_bn {
+.Share_line {
   position: absolute;
   float: right;
-  top: 0px;
-  right: 66px;
-  height: 350px;
+  top: -148px;
+  right: -7px;
+  height: 158px;
   width: 136px;
-  background: url("../img/share_gray.png");
+  background: url("../img/share_line.png");
+  background-size: 136px 158px;
+}
+.Share_bn {
+position: absolute;
+  float: right;
+  top: 139px;
+  right: 45px;
+  height: 143px;
+  width: 124px;
+  background: url("../img/share_blue.png");
+  background-size: 124px 143px;
 }
 .Share_bn_overlay{ 
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 350px;
-  width: 136px;
-  background: url("../img/share.png");
+  height: 143px;
+  width: 124px;
+  background: url("../img/share_orange.png");
+  background-size: 124px 143px;
   opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 .Share_bn:hover .Share_bn_overlay {
   opacity:1;
   cursor: pointer;
 }
 
+
 .Share_bn_text {
-  position: absolute;
-  top: 252px;
-  left: 33px;
+position: absolute;
+  top: 75px;
+  left: 31px;
   font-family: arial;
   font-weight: bold;
-  font-size: 21px;
+  font-size: 20px;
   color: white;
   z-index: 12;
+}
+
+.Share_bn:hover .Share_bn_text {
+  color: black;
 }
 
 .Share_reason {
@@ -410,7 +431,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   left: 10px;
   width: 295px;
   font-family: arial;
-  font-size: 14px;
+  font-size: 14.5px;
   color: white;
 }
 
@@ -618,11 +639,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .app_unit {
   position: relative;
   float: left;
-  width: calc(33.3vw - 270px);
+  width: calc(33.3vw - 274px);
   min-width: 190px;
   min-height: 135px;
-  height: calc(16.65vw - 95px);
-  margin: 0.4vw;
+  height: calc(16.65vw - 92px);
+  margin: 0.5vw;
   background: rgb(219, 219, 219);
   box-shadow: 0px 0px 5px rgb(60, 60, 60);
   -webkit-transition: 0.3s ease-in-out;

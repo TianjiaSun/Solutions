@@ -21,6 +21,7 @@
   <div id="Share_container" hidden>
     <div class="Share_info_container">
       <div class="Share_bn">
+        <div class="Share_line"></div>
         <div class="Share_bn_text">START</div>
         <div class="Share_bn_overlay"></div>
       </div>
@@ -42,7 +43,7 @@
       <input class="search_bar_input" placeholder="Search..." ng-model="query" ng-keydown="Search($event)"></input>
       <div class="search_bar_bn" ng-click="ClickSearch()"></div>
     </div>
-    <div class="main_navigator_h1" ng-click="filterCAT('Recommended')">Top Solutions</div>
+    <div class="main_navigator_h1" ng-click="filterCAT('Top Solutions')">Top Solutions</div>
     <div class="main_navigator_h1">By Business</div>
       <div class="main_navigator_h2_seperate"></div>
       <div class="main_navigator_h2" ng-click="filterCAT('E-Commerce')">E-Commerce</div>
@@ -75,15 +76,15 @@
   </div>
   
   <div id="list_container" hidden>
-    <div class="page_header">{{header}} ({{filterredApps.length}})</div>
-    <div ng-repeat="app in filterredApps | orderBy:'-certified'">
+    <div class="page_header">{{header}} ({{solutions.length}})</div>
+    <div ng-repeat="solution in solutions">
       <div class="solution_unit">
-        <img class="solution_ad" src="http://asa.static.gausian.com/solution/Xplore_E-Commerce/ad.jpg"/>
+        <img class="solution_ad" src="{{solution.ad}}"/>
         <div class="solution_mask"></div>
         <div class="solution_left_container">
           <div class="triangle-topleft">
-            <div class="solution_name">Xplore E-Commerce</div>
-            <div class="solution_brief">Get Started on Entry-level E-Commerce</div>
+            <div class="solution_name">{{solution.name}}</div>
+            <div class="solution_brief">{{solution.brief}}</div>
             <div class="solution_review">
               <span class="star-icon full">☆</span>
               <span class="star-icon full">☆</span>
@@ -95,7 +96,7 @@
           </div>
         </div>
         <div class="feature_container">
-          <div class="feature">This place is used to place feature description provided by solution provider.</div>
+          <div class="feature">{{solution.introduction}}</div>
         </div>
         <div class="app_in_solution_container">
           <div class="app_unit">
@@ -154,9 +155,9 @@
           <div class="free_trial">30-Days Free Trial</div>
           <img class="box" src="img/box.png"/>
           <div class="price_header">Total</div>
-          <div class="Total_price">$26.50</div>
+          <div class="Total_price">{{solution.pricing | currency}}</div>
           <div class="Per_month">/month</div>
-          <div class="discounted_price">$5.00 Discount Applied</div>
+          <div class="discounted_price">{{solution.discount | currency}} Discount Applied</div>
           <!-- <div class="solution_provider">Provided by GAUSIAN</div> -->
         </div>
       </div>

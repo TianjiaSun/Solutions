@@ -3,7 +3,7 @@
 var store = angular.module('store',['ngRoute'])
   .controller('StoreListCtrl', function($scope, $http, $route, $routeParams, $sce, $timeout) {
 
-  $scope.header = "Recommended";
+  $scope.header = "Top Solutions";
 
   $scope.data;
   var req = {
@@ -12,20 +12,20 @@ var store = angular.module('store',['ngRoute'])
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    data: $.param({user_app_id:'app_id', service_app_name:'UserAppInfo', request_string: "get"})
+    data: $.param({user_app_id:'app_id', service_app_name:'Solution', request_string: "get"})
   };
 
-  // get app info from ASA
+  // get solutions info from ASA
   $http(req).success(function(data) {
-    $scope.apps = angular.fromJson(data.response);
+    $scope.solutions = angular.fromJson(data.response);
     // open Recommended page
-    $scope.filterredApps = [];
+    $scope.filterredSolutions = [];
     var j=0;
-    for(var i=0; i<$scope.apps.length; i++){
-      var app = $scope.apps[i];
+    for(var i=0; i<$scope.solutions.length; i++){
+      var solution = $scope.solutions[i];
       // scope.header = Recommended at this moment
       if(app.catalog.match($scope.header)){
-        $scope.filterredApps[j++] = app;
+        $scope.filterredSolutions[j++] = solution;
       }
     }
   });
