@@ -25,9 +25,9 @@
         <div class="Share_bn_text">START</div>
         <div class="Share_bn_overlay"></div>
       </div>
-      <div class="Share_title">Create Your Solution</div>
+      <div class="Share_title">Create A New Solution!</div>
       <div class="Share_reason">
-        Create your valuable solutions for others, so you can get additional discount of using APPs and more importantly help other worldwide small business like you. 
+        Create a valuable solutions for others, so you can get additional discount of using APPs and more importantly help other worldwide small business like you. 
       </div>
       <div class="Share_feedback">
         Solution is to be censored. You will get review feedback. Additional discount for you is based on review.
@@ -98,7 +98,7 @@
         <div class="feature_container">
           <div class="feature">{{solution.introduction}}</div>
         </div>
-        <div class="solution_right_container">
+        <div class="solution_right_container" ng-show="solution.pricing != 'FREE'">
           <div class="try_bn">Try it for FREE</div>
           <div class="free_trial">30-Days Free Trial</div>
           <img class="box" src="img/box.png"/>
@@ -106,7 +106,9 @@
           <div class="Total_price">{{solution.pricing | currency}}</div>
           <div class="Per_month">/month</div>
           <div class="discounted_price">{{solution.discount | currency}} Discount Applied</div>
-          <!-- <div class="solution_provider">Provided by GAUSIAN</div> -->
+        </div>
+        <div class="solution_right_container" ng-show="solution.pricing == 'FREE'">
+          <div class="try_bn">FREE</div>
         </div>
         <div class="app_in_solution_container">
           <div ng-repeat="app in solution.app_array">

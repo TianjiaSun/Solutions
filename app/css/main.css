@@ -289,9 +289,9 @@ position: absolute;
 }
 
 .Share_close {
-  position: absolute;
-  top: calc(30% - 16px);
-  left: calc(70% - 24px);
+position: absolute;
+  top: calc(50% - 189px);
+  left: calc(50% + 295px);
   width: 40px;
   height: 40px;
   z-index: 12;
@@ -630,7 +630,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
   float: right;
   right: 170px;
   top: 0px;
-  width: calc(100% - 496px);
+  width: calc(100% - 470px);
   max-width: 1200px;
   height: 100%;
   padding: 5px;
@@ -640,12 +640,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .app_unit {
   position: relative;
   float: left;
-  width: calc(33.3vw - 276px);
+  width: calc(33.3vw - 265px);
   min-width: 190px;
   max-width: 266px;
   min-height: 135px;
   max-height: 173px;
-  height: calc(16.65vw - 92px);
+  height: calc(16.65vw - 85px);
   margin: 0.5vw;
   background: rgb(219, 219, 219);
   box-shadow: 0px 0px 5px rgb(60, 60, 60);
@@ -708,7 +708,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 .app_name {
 position: absolute;
 left: 9px;
-bottom: 15px;
+bottom: 17px;
 font-family: arial;
 font-size: 16px;
 color: rgb(62, 62, 62);
