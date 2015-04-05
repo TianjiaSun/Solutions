@@ -167,6 +167,7 @@ var store = angular.module('store',['ngRoute'])
     if (keyEvent.which === 27){
       // close search result
       $("#search_container").hide();
+      $("#list_container").hide();
       $("#byBusiness_container").fadeIn(500);
       $scope.search_header = null;
       $scope.query = null;
