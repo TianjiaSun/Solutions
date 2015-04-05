@@ -72,17 +72,24 @@ var store = angular.module('store',['ngRoute'])
 
   // to avoid flashing during page loading
   $scope.init = function () {
-    $("#list_container").fadeIn(1000);
+    $("#byBusiness_container").fadeIn(1000);
   };
 
   // open share solution dialog
-  $scope.Share_info = function() {
+  $scope.new_solution = function() {
     $("#Share_container").fadeIn(300);
   }
 
   // close share info dialog
-  $scope.Close_share = function() {
+  $scope.close_new_solution = function() {
     $("#Share_container").hide();
+  }
+
+  // show by Business Page
+  $scope.allSolutions = function() {
+    $("#search_container").hide();
+    $("#list_container").hide();
+    $("#byBusiness_container").fadeIn(500);
   }
 
   // open detail page for one app
@@ -109,6 +116,7 @@ var store = angular.module('store',['ngRoute'])
 
   $scope.filterCAT = function(catalog) {
     $scope.header = catalog;
+    $("#byBusiness_container").hide();
     $("#search_container").hide();
     $("#list_container").hide();
     // filter with catalog info

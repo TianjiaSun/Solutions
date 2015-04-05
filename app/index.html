@@ -27,24 +27,24 @@
       </div>
       <div class="Share_title">Create A New Solution!</div>
       <div class="Share_reason">
-        Create a valuable solutions for others, so you can get additional discount of using APPs and more importantly help other worldwide small business like you. 
+        Create a new valuable solution, so you can get additional discount of using those APPs. 
       </div>
       <div class="Share_feedback">
         Solution is to be censored. You will get review feedback. Additional discount for you is based on review.
       </div>
     </div>
-    <img class="Share_close" src="img/close_share.png" ng-click="Close_share()"/>
+    <img class="Share_close" src="img/close_share.png" ng-click="close_new_solution()"/>
   </div>
 
   <div id="category_container">
-    <div class="logo">GAUSIAN Solutions</div>
-    <div class="Share_solution" ng-click="Share_info()">Create A New Solution</div>
+    <div class="logo" ng-click="allSolutions()">GAUSIAN Solutions</div>
+    <!-- <div class="Share_solution" ng-click="new_solution()">Create A New Solution</div> -->
     <div class="search_bar">
       <input class="search_bar_input" placeholder="Search..." ng-model="query" ng-keydown="Search($event)"></input>
       <div class="search_bar_bn" ng-click="ClickSearch()"></div>
     </div>
-    <div class="main_navigator_h1" ng-click="filterCAT('Top Solutions')">Top Solutions</div>
-    <div class="main_navigator_h1">By Business</div>
+    <div class="main_navigator_h1" ng-click="filterCAT('Recommended')">Recommended</div>
+    <div class="main_navigator_h1" ng-click="allSolutions()">All Solutions</div>
       <div class="main_navigator_h2_seperate"></div>
       <div class="main_navigator_h2" ng-click="filterCAT('E-Commerce')">E-Commerce</div>
       <div class="main_navigator_h2" ng-click="filterCAT('Retail')">Retail</div>
@@ -140,6 +140,46 @@
         <div class="app_price">{{app.pricing}}</div>
         <img class="app_icon" src="{{app.icon}}"/>
         <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
+      </div>
+    </div>
+  </div>
+
+  <div id="byBusiness_container" hidden>
+    <div class="vertical_container">
+      <div class="item c1 r1 odd_row" ng-click="filterCAT('E-Commerce')">
+        <img class="hex_img" src="img/online.png"/>
+      </div>
+      <div class="item c2 r1 odd_row new_solu2" ng-click="new_solution()">
+        <img class="hex_img" src="img/new_solu.png"/>
+      </div>
+      <div class="item c3 r1 odd_row" ng-click="filterCAT('Restaurant')">
+        <img class="hex_img" src="img/Restaurant.png"/>
+      </div>
+
+      <div class="item c1 r2 new_solu" ng-click="new_solution()">
+        <img class="hex_img" src="img/new_solu.png"/>
+      </div>
+      <div class="item c2 r2" ng-click="filterCAT('Transportation')">
+        <img class="hex_img" src="img/transportation.png"/>
+      </div>
+      <div class="item c3 r2">
+        <img class="hex_img" src="img/logo.png"/>
+      </div>
+      <div class="item c4 r2" ng-click="filterCAT('E-Commerce')">
+        <img class="hex_img" src="img/online2.png"/>
+      </div>
+      <div class="item c5 r2" ng-click="filterCAT('Agency')">
+        <img class="hex_img" src="img/agent.png"/>
+      </div>
+
+      <div class="item c2 r3 odd_row" ng-click="filterCAT('Manufacturing')">
+        <img class="hex_img" src="img/manu.png"/>
+      </div>
+      <div class="item c3 r3 odd_row" ng-click="filterCAT('Software')">
+        <img class="hex_img" src="img/startups.png"/>
+      </div>
+      <div class="item c4 r3 odd_row new_solu" ng-click="new_solution()">
+        <img class="hex_img" src="img/new_solu.png"/>
       </div>
     </div>
   </div>
