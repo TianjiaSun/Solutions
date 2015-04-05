@@ -108,11 +108,11 @@
           <div class="discounted_price">{{solution.discount | currency}} Discount Applied</div>
         </div>
         <div class="solution_right_container" ng-show="solution.pricing == 'FREE'">
-          <div class="try_bn">FREE</div>
+          <div class="try_bn" ng-click="install(solution)">All FREE</div>
         </div>
         <div class="app_in_solution_container">
           <div ng-repeat="app in solution.app_array">
-            <div class="app_unit">
+            <div class="app_unit" ng-click="openApp(app)">
               <img class="app_ad" src="{{app.ad}}"/>
               <div class="app_gradient"></div>
               <div class="app_mask"></div>

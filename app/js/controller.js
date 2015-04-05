@@ -92,6 +92,11 @@ var store = angular.module('store',['ngRoute'])
     $("#byBusiness_container").fadeIn(500);
   }
 
+  // install a solution
+  $scope.install = function(solution) {
+    alert("install app id: " + solution.apps);
+  }
+
   // open detail page for one app
   $scope.openApp = function(app) {
     // firstly move overlay container into window
