@@ -141,32 +141,33 @@ var store = angular.module('store',['ngRoute'])
     // if enter is input in search box
     if (keyEvent.which === 13){
       // hide list page
+      $("#byBusiness_container").hide();
       $("#list_container").hide();
       $("#search_container").hide();
-      $scope.searchedApps = [];
+      $scope.searchedSolution = [];
       var j=0;
-      for(var i=0; i<$scope.apps.length; i++){
-        var app = $scope.apps[i];
-        if(app.keyword.match(angular.lowercase($scope.query))){
-          $scope.searchedApps[j++] = app;
+      for(var i=0; i<$scope.solutions.length; i++){
+        var solution = $scope.solutions[i];
+        if(solution.keyword.match(angular.lowercase($scope.query))){
+          $scope.searchedSolution[j++] = solution;
         }
       }
       $("#search_container").fadeIn(500);
-      if($scope.searchedApps.length === 0) {
-        $scope.search_header = "Sorry, no matching APP.";
+      if($scope.searchedSolution.length === 0) {
+        $scope.search_header = "Sorry, no matching solution.";
       }
-      else if($scope.searchedApps.length === 1) {
+      else if($scope.searchedSolution.length === 1) {
         $scope.search_header = "There is one result:";
       }
       else {
-        $scope.search_header = "There are " + $scope.searchedApps.length + " results:";
+        $scope.search_header = "There are " + $scope.searchedSolution.length + " results:";
       }
     }
     // if escape is input in search box
     if (keyEvent.which === 27){
       // close search result
       $("#search_container").hide();
-      $("#list_container").fadeIn(500);
+      $("#byBusiness_container").fadeIn(500);
       $scope.search_header = null;
       $scope.query = null;
     }
@@ -174,26 +175,27 @@ var store = angular.module('store',['ngRoute'])
 
   $scope.ClickSearch = function() {
     // hide list page
+    $("#byBusiness_container").hide();
     $("#list_container").hide();
     $("#search_container").hide();
-    $scope.searchedApps = [];
+    $scope.searchedSolution = [];
     var j=0;
-    for(var i=0; i<$scope.apps.length; i++){
-      var app = $scope.apps[i];
-      if(app.keyword.match($scope.query)){
-        $scope.searchedApps[j++] = app;
+    for(var i=0; i<$scope.solutions.length; i++){
+      var solution = $scope.solutions[i];
+      if(solution.keyword.match(angular.lowercase($scope.query))){
+        $scope.searchedSolution[j++] = solution;
       }
     }
-    if($scope.searchedApps.length === 0) {
-      $scope.search_header = "Sorry, no matching APP.";
+    $("#search_container").fadeIn(500);
+    if($scope.searchedSolution.length === 0) {
+      $scope.search_header = "Sorry, no matching solution.";
     }
-    else if($scope.searchedApps.length === 1) {
+    else if($scope.searchedSolution.length === 1) {
       $scope.search_header = "There is one result:";
     }
     else {
-      $scope.search_header = "There are " + $scope.searchedApps.length + " results:";
+      $scope.search_header = "There are " + $scope.searchedSolution.length + " results:";
     }
-    $("#search_container").fadeIn(500);
   }
 
 })
