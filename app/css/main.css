@@ -368,7 +368,7 @@ padding-bottom: 4px;
   position: relative;
   padding-bottom: 3px;
   float: left;
-  width: calc(100vw - 262px);
+  width: calc(100vw - 258px);
   min-width: 800px;
   min-height: 200px;
   height: auto;
@@ -434,7 +434,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   position: absolute;
   bottom: 12px;
   left: 10px;
-  width: 295px;
+  width: 250px;
   font-family: arial;
   font-size: 14.5px;
   color: white;
@@ -488,10 +488,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .try_bn {
-  position: absolute;
+position: absolute;
   top: 15px;
-  right: 21px;
-  width: 150px;
+  right: 15px;
+  width: 134px;
   height: 50px;
   border-radius: 13px;
   line-height: 50px;
@@ -528,8 +528,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .free_trial {
   position: absolute;
   top: 72px;
-  right: 21px;
-  width: 150px;
+  right: 15px;
+  width: 135px;
   height: 20px;
   border-radius: 13px;
   line-height: 20px;
@@ -542,9 +542,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .box {
   position: absolute;
   top: 130px;
-  right: 18px;
-  width: 150px;
-  height: 150px;
+  right: 11px;
+  width: 140px;
+  height: 146px;
   border-radius: 13px;
   line-height: 20px;
   text-align: center;
@@ -557,8 +557,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .price_header {
   position: absolute;
   top: 186px;
-  right: 18px;
-  width: 155px;
+  right: 35px;
+  width: 92px;
   height: 26px;
   border-radius: 13px;
   line-height: 26px;
@@ -573,8 +573,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .Total_price {
   position: absolute;
   top: 218px;
-  right: 18px;
-  width: 155px;
+  right: 13px;
+  width: 135px;
   height: 30px;
   border-radius: 13px;
   line-height: 30px;
@@ -588,8 +588,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .Per_month {
   position: absolute;
   top: 241px;
-  right: 18px;
-  width: 155px;
+  right: 12px;
+  width: 135px;
   height: 30px;
   border-radius: 13px;
   line-height: 30px;
@@ -603,8 +603,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .discounted_price {
   position: absolute;
   top: 280px;
-  right: 18px;
-  width: 155px;
+  right: 3px;
+  width: 160px;
   height: 20px;
   border-radius: 13px;
   line-height: 20px;
@@ -633,9 +633,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 .app_in_solution_container {
   position: relative;
   float: right;
-  right: 170px;
+  right: 160px;
   top: 0px;
-  width: calc(100% - 470px);
+  width: calc(100% - 418px);
   max-width: 1200px;
   height: 100%;
   padding: 5px;
@@ -644,7 +644,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
 
 .app_unit {
   position: relative;
-  float: left;
+  float: right;
   width: calc(33.3vw - 265px);
   min-width: 190px;
   max-width: 266px;
@@ -1288,7 +1288,7 @@ position: relative;
   height: 100%;
   background: rgba(38, 45, 56, 1);
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .vertical_container {
