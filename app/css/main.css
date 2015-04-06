@@ -36,18 +36,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#565656', end
 }
 
 .logo {
-  left: 0px;
-  top: 19px;
+  height: 62px;
   font-family: arial;
-  font-size: 18.5px;
+  font-size: 19px;
   text-align: left;
   position: relative;
-  color: rgb(105, 204, 255);
+  color: #FFFFFF;
   font-weight: bold;
-  margin-bottom: 40px;
-  width: 200px;
-  text-align: center;
-  height: 33px;
+  margin-bottom: 0px;
 }
 
 .logo:hover {
