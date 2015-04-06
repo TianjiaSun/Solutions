@@ -1284,9 +1284,18 @@ position: relative;
   padding-left: 200px;
   width: 100%;
   height: 100%;
-  background: rgba(38, 45, 56, 1);
+  /*background: rgba(38, 45, 56, 1);*/
   overflow-x: hidden;
   overflow-y: hidden;
+background: #00a0d6; /* Old browsers */
+background: -moz-linear-gradient(top,  #00a0d6 0%, #18324f 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00a0d6), color-stop(100%,#18324f)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #00a0d6 0%,#18324f 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #00a0d6 0%,#18324f 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #00a0d6 0%,#18324f 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #00a0d6 0%,#18324f 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a0d6', endColorstr='#18324f',GradientType=0 ); /* IE6-9 */
+
 }
 
 .vertical_container {
@@ -1343,7 +1352,7 @@ position: relative;
 }
 
 .new_solu {
-  opacity: 0.4;
+  opacity: 0.25;
 }
 .new_solu:hover {
   cursor: pointer;
